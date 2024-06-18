@@ -1,8 +1,9 @@
+import {Hero} from "../components/Hero/Hero.jsx";
 
 export default function Home() {
     return (
-        <div className='text-red-600 font-bold hover:underline'>
-            <p>Home</p>
+        <div className=''>
+            <Hero/>
         </div>
     )
 }

@@ -4,14 +4,14 @@ export const NavBar = () => {
     return (
         <nav>
             <ul className='flex items-center gap-px'>
-                <li className='bg-white rounded-60 border border-gray-300 p-2'>
+                <li className='bg-white rounded-60 border border-borderNavLink p-2'>
                     <NavLink exact to='/'  className={({ isActive }) =>
                         isActive ? 'bg-green rounded-60 text-white py-2 px-5 block' : 'block py-2 px-5'
                     }>
                         Home
                     </NavLink>
                 </li>
-                <li className='bg-white rounded-60 p-2 border border-gray-300'>
+                <li className='bg-white rounded-60 border border-borderNavLink p-2'>
                     <NavLink
                         to='/medicine-store'
                         className={({ isActive }) =>
@@ -21,7 +21,7 @@ export const NavBar = () => {
                         Medicine Store
                     </NavLink>
                 </li>
-                <li className='bg-white rounded-60 p-2 border border-gray-300'>
+                <li className='bg-white rounded-60 border border-borderNavLink p-2'>
                     <NavLink to='/medicine'  className={({ isActive }) =>
                         isActive ? 'bg-green rounded-60 text-white py-2 px-5 block' : 'block py-2 px-5'
                     }>
