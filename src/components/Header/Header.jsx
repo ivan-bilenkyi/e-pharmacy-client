@@ -1,17 +1,18 @@
 import {Logo} from "./Logo.jsx";
-import {NavBar} from "./NavBar.jsx";
+import {NavBar} from "../NavBar/NavBar.jsx";
 import {UserBar} from "./UserBar.jsx";
 import {useLocation} from "react-router-dom";
 
 export default function Header () {
-    const location = useLocation();
-    const isHomePage = location.pathname === "/";
+    const { pathname } = useLocation();
+    const isHomePage = pathname === "/";
+    const isAuthPage = pathname === "/register" || pathname === "/login";
 
     return (
         <header className={isHomePage ? "bg-green" : "bg-white"}>
-            <div className='w-1208px flex items-center place-content-around py-7 px-5'>
+            <div className='w-1240px flex items-center py-7 px-5'>
                 <Logo/>
-                <NavBar/>
+                {!isAuthPage && <NavBar/>}
                 <UserBar/>
             </div>
         </header>

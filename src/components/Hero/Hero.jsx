@@ -1,9 +1,9 @@
-import heroMobile from "../../assets/Hero-mobile.png"
-import heroMobile2x from "../../assets/Hero-mobile_2x.png"
-import heroTablet from "../../assets/Hero-tablet.png"
-import heroTablet2x from "../../assets/Hero-tablet_2x.png"
-import heroDesc from "../../assets/Hero-desc.png"
-import heroDesc2x from "../../assets/Hero-desc_2x.png"
+import heroMobile from "../../assets/hero/Hero-mobile.png"
+import heroMobile2x from "../../assets/hero/Hero-mobile_2x.png"
+import heroTablet from "../../assets/hero/Hero-tablet.png"
+import heroTablet2x from "../../assets/hero/Hero-tablet_2x.png"
+import heroDesc from "../../assets/hero/Hero-desc.png"
+import heroDesc2x from "../../assets/hero/Hero-desc_2x.png"
 
 export const Hero = () => {
     return (
