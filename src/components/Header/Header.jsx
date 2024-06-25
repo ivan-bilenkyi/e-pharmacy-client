@@ -10,10 +10,10 @@ export default function Header () {
 
     return (
         <header className={isHomePage ? "bg-green" : "bg-white"}>
-            <div className='w-1240px flex items-center py-7 px-5'>
+            <div className='w-1240px flex items-center justify-between py-7 px-5'>
                 <Logo/>
                 {!isAuthPage && <NavBar/>}
-                <UserBar/>
+                {!isAuthPage && <UserBar/>}
             </div>
         </header>
     )

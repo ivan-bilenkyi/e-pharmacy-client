@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
+import {logIn} from "../../../redux/auth/operations.js";
 
 export const LoginForm= () => {
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export const LoginForm= () => {
     };
 
     const onSubmit = (values) => {
-        // dispatch(login(values))
+        dispatch(logIn(values))
     };
 
     return (
@@ -33,24 +34,27 @@ export const LoginForm= () => {
                 <Form className="flex flex-col mx-auto mt-[78px]">
 
                     <div className='flex flex-col gap-14 lg:mb-[62px]'>
+                        <div className='relative'>
+                            <Field
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email adress"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"
+                            />
+                            <ErrorMessage name="email" component="div" className="text-red-500 text-xs absolute" />
+                        </div>
 
-                        <Field
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Email adress"
-                            className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"
-                        />
-                        {/*<ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />*/}
-
-                        <Field
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"
-                        />
-                        {/*<ErrorMessage name="password" component="div" className="text-red-500 text-sm mt-1" />*/}
+                        <div className='relative'>
+                            <Field
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"
+                            />
+                            <ErrorMessage name="password" component="div" className="text-red-500 text-xs absolute" />
+                        </div>
                     </div>
 
                     <div className='inline-flex flex-col items-center gap-14 m-auto'>

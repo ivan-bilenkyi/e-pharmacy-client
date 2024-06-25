@@ -43,7 +43,7 @@ export const Logo = () => {
     const { default: defaultSrc, retina: retinaSrc } = getImageSources();
 
     return (
-        <Link to="/" className="flex gap-3.5 items-center mr-auto">
+        <Link to="/" className="flex gap-3.5 items-center">
             <picture>
                 <source srcSet={`${retinaSrc} 2x`}/>
                 <img src={defaultSrc} alt="Logo"/>
