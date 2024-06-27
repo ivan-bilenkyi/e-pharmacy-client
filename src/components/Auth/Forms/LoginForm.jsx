@@ -37,7 +37,6 @@ export const LoginForm= () => {
                         <div className='relative'>
                             <Field
                                 type="email"
-                                id="email"
                                 name="email"
                                 placeholder="Email adress"
                                 className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"
@@ -48,7 +47,6 @@ export const LoginForm= () => {
                         <div className='relative'>
                             <Field
                                 type="password"
-                                id="password"
                                 name="password"
                                 placeholder="Password"
                                 className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"

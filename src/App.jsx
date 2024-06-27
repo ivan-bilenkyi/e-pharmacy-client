@@ -1,7 +1,9 @@
 import {Route, Routes} from "react-router-dom";
-import {lazy} from "react";
+import {lazy, useEffect} from "react";
 import {AppLayout} from "./components/AppLayout.jsx";
 import RestrictedRoute from "./components/RestrictedRoute.jsx";
+import {refreshUser} from "./redux/auth/operations.js";
+import {useDispatch} from "react-redux";
 
 const Home = lazy(() => import('./pages/Home.jsx'));
 const MedicineStore = lazy(() => import('./pages/MedicineStore.jsx'));
@@ -11,6 +13,12 @@ const Login = lazy(() => import('./pages/Login.jsx'))
 
 
 export default function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(refreshUser());
+    }, [dispatch]);
+
     return (
         <Routes>
             <Route path="/" element={<AppLayout />}>
