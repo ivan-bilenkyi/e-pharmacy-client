@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
     return (
-        <nav>
+        <nav className='hidden lg:block'>
             <ul className='flex items-center gap-px'>
                 <li className='bg-white rounded-60 border border-borderNavLink p-2 text-text'>
                     <NavLink to='/' className={({ isActive }) =>

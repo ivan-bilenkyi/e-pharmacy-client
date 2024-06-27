@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from '../../../redux/auth/operations.js';
 import { Link } from 'react-router-dom';
-import InputMask from 'react-input-mask';
+import MaskedInput from 'react-text-mask';
 
 export const RegisterForm = () => {
     const dispatch = useDispatch();
@@ -35,7 +35,6 @@ export const RegisterForm = () => {
                         <div className='relative'>
                             <Field
                                 type="text"
-                                id="name"
                                 name="name"
                                 placeholder="User name"
                                 className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
@@ -46,7 +45,6 @@ export const RegisterForm = () => {
                         <div className='relative'>
                             <Field
                                 type="email"
-                                id="email"
                                 name="email"
                                 placeholder="Email address"
                                 className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
@@ -57,10 +55,9 @@ export const RegisterForm = () => {
                         <div className='relative'>
                             <Field name="phone">
                                 {({ field }) => (
-                                    <InputMask
+                                    <MaskedInput
                                         {...field}
-                                        mask="+38099-999-99-99"
-                                        maskChar="_"
+                                        mask={['+', '3', '8', '0', /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
                                         className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
                                         placeholder='+380__-___-__-__'
                                     />
@@ -72,7 +69,6 @@ export const RegisterForm = () => {
                         <div className='relative'>
                             <Field
                                 type="password"
-                                id="password"
                                 name="password"
                                 placeholder="Password"
                                 className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
