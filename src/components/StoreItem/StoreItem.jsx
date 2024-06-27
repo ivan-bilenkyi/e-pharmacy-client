@@ -28,7 +28,7 @@ export const StoreItem = ({item}) => {
                     </div>
                     <span
                         className={`px-[16px] py-[8px] text-12 font-bold leading-150 uppercase rounded-[8px] ${item.status === 'open' ? 'bg-greenAlpha text-green' : 'bg-redAlpha text-red'}`}>
-                    {item.status = 'open'}
+                    {item.status}
                 </span>
                 </div>
             </div>

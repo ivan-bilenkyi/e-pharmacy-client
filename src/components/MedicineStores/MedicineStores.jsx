@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {StoreItem} from "../StorItem/StoreItem.jsx";
+import {StoreItem} from "../StoreItem/StoreItem.jsx";
 
 export const MedicineStores = () => {
     const [stores, setStores] = useState([]);

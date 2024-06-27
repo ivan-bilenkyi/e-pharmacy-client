@@ -23,6 +23,7 @@ module.exports = {
         greenAlpha50: 'rgba(89, 177, 122, 0.50)',
         grayAlpha: 'rgba(241, 241, 241, 0.50)',
         redAlpha: 'rgba(232, 80, 80, 0.10)',
+        mediaBorder: 'rgba(247, 248, 250, 0.10)',
         background: '#F7F8FA',
         white: '#FFFFFF',
         dark: '#1D1E21',
