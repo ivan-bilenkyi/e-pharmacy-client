@@ -2,6 +2,7 @@ import {Logo} from "./Logo.jsx";
 import {NavBar} from "../NavBar/NavBar.jsx";
 import {UserBar} from "../UserBar/UserBar.jsx";
 import {useLocation} from "react-router-dom";
+import {BurgerMenu} from "../BergerMenu/BurgerMenu.jsx";
 
 export default function Header () {
     const { pathname } = useLocation();
@@ -18,6 +19,7 @@ export default function Header () {
                         <UserBar />
                     </>
                 )}
+                <BurgerMenu/>
             </div>
         </header>
     )

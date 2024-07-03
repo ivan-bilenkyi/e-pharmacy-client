@@ -71,5 +71,22 @@
     <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 21" id="lightning">
         <path d="M10.8331 2.16699L3.41094 11.0735C3.12026 11.4223 2.97492 11.5967 2.9727 11.744C2.97077 11.8721 3.02783 11.9939 3.12744 12.0744C3.24201 12.167 3.46904 12.167 3.92308 12.167H9.99972L9.16639 18.8337L16.5885 9.92711C16.8792 9.57831 17.0245 9.4039 17.0267 9.25661C17.0287 9.12856 16.9716 9.00674 16.872 8.92625C16.7574 8.83366 16.5304 8.83366 16.0764 8.83366H9.99972L10.8331 2.16699Z" stroke="#59B17A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
     </symbol>
+
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26" id="burger-green">
+        <path d="M28.3379 13.207H4.33789" stroke="#59B17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M28.3379 8.00684H4.33789" stroke="#59B17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M28.3379 18.4072H4.33789" stroke="#59B17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26" id="burger-white">
+        <path d="M28.3379 13.207H4.33789" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M28.3379 8.00684H4.33789" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M28.3379 18.4072H4.33789" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="close-modal">
+        <path d="M24 8L8 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M8 8L24 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
 </defs>
 </svg>

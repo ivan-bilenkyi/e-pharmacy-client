@@ -17,6 +17,7 @@ module.exports = {
       },
       colors: {
         green: '#59B17A',
+        bgModalBurger: 'rgba(29, 30, 33, 0.45)',
         darkAlpha: 'rgba(29, 30, 33, 0.40)',
         greenAlphaLight: 'rgba(89, 177, 122, 0.08)',
         greenAlpha: 'rgba(89, 177, 122, 0.10)',

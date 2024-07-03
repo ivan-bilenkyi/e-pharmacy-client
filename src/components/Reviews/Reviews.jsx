@@ -27,10 +27,8 @@ export const Reviews = () => {
 
     useEffect(() => {
         const fetchAllReviews = async () => {
-            const width = window.innerWidth;
-            console.log(width)
             try {
-                const {data} = await axios(`/customer-reviews?width=${width}`)
+                const {data} = await axios('/customer-reviews')
                 setReviews(data)
             } catch (e){
                 console.log(e)

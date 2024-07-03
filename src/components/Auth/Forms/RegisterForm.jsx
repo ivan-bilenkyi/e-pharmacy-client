@@ -31,13 +31,13 @@ export const RegisterForm = () => {
         <div>
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                 <Form className="mt-[78px]">
-                    <div className='flex flex-col lg:flex-row flex-wrap gap-14 lg:mb-[62px]'>
+                    <div className='flex flex-col lg:flex-row flex-wrap gap-[10px] lg:mb-[62px] mb-[20px]'>
                         <div className='relative'>
                             <Field
                                 type="text"
                                 name="name"
                                 placeholder="User name"
-                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13 w-full"
                             />
                             <ErrorMessage name="name" component="div" className="text-red-500 text-xs absolute" />
                         </div>
@@ -47,7 +47,7 @@ export const RegisterForm = () => {
                                 type="email"
                                 name="email"
                                 placeholder="Email address"
-                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13 w-full"
                             />
                             <ErrorMessage name="email" component="div" className="text-red-500 text-xs absolute" />
                         </div>
@@ -58,7 +58,7 @@ export const RegisterForm = () => {
                                     <MaskedInput
                                         {...field}
                                         mask={['+', '3', '8', '0', /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
-                                        className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
+                                        className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13 w-full"
                                         placeholder='+380__-___-__-__'
                                     />
                                 )}
@@ -71,14 +71,14 @@ export const RegisterForm = () => {
                                 type="password"
                                 name="password"
                                 placeholder="Password"
-                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13 w-full"
                             />
                             <ErrorMessage name="password" component="div" className="text-red-500 text-xs absolute" />
                         </div>
                     </div>
 
-                    <div className='inline-flex flex-col items-center gap-14'>
-                        <button type="submit" className="lg:w-[280px] py-13 px-4 text-white bg-green rounded-60 hover:bg-hoverButton">
+                    <div className='inline-flex flex-col items-center gap-14 w-full'>
+                        <button type="submit" className="lg:w-[280px] py-13 px-4 text-white bg-green rounded-60 hover:bg-hoverButton w-full">
                             Register
                         </button>
                         <Link to='/login' className='text-12 leading-150 text-darkAlpha items-center'>Already have an account?</Link>

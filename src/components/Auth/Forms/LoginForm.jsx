@@ -33,7 +33,7 @@ export const LoginForm= () => {
             >
                 <Form className="flex flex-col mx-auto mt-[78px]">
 
-                    <div className='flex flex-col gap-14 lg:mb-[62px]'>
+                    <div className='flex flex-col gap-[10px] lg:mb-[62px] mb-[128px]'>
                         <div className='relative'>
                             <Field
                                 type="email"
@@ -43,6 +43,8 @@ export const LoginForm= () => {
                             />
                             <ErrorMessage name="email" component="div" className="text-red-500 text-xs absolute" />
                         </div>
+
+
 
                         <div className='relative'>
                             <Field
