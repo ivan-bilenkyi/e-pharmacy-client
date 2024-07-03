@@ -33,13 +33,13 @@ export const LoginForm= () => {
             >
                 <Form className="flex flex-col mx-auto mt-[78px]">
 
-                    <div className='flex flex-col gap-[10px] lg:mb-[62px] mb-[128px]'>
+                    <div className='flex flex-col gap-[10px] lg:mb-[62px] mb-[132px] text-12 leading-150'>
                         <div className='relative'>
                             <Field
                                 type="email"
                                 name="email"
                                 placeholder="Email adress"
-                                className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-13"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 w-[335px] px-18 py-[12px]"
                             />
                             <ErrorMessage name="email" component="div" className="text-red-500 text-xs absolute" />
                         </div>

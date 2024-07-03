@@ -31,13 +31,13 @@ export const RegisterForm = () => {
         <div>
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                 <Form className="mt-[78px]">
-                    <div className='flex flex-col lg:flex-row flex-wrap gap-[10px] lg:mb-[62px] mb-[20px]'>
+                    <div className='flex flex-col lg:flex-row flex-wrap gap-[10px] lg:mb-[62px] mb-[20px] text-12 leading-150'>
                         <div className='relative'>
                             <Field
                                 type="text"
                                 name="name"
                                 placeholder="User name"
-                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-13 w-full"
+                                className="rounded-60 border border-darkAlpha focus:border-blue-500 lg:w-[280px] px-18 py-[12px] w-full"
                             />
                             <ErrorMessage name="name" component="div" className="text-red-500 text-xs absolute" />
                         </div>
