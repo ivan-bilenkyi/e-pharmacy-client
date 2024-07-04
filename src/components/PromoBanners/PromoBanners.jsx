@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {MedicineStores} from "../MedicineStores/MedicineStores.jsx";
+import {NearestMedicineStore} from "../NerestMedicineStore/NerestMedicineStore.jsx";
 
 export const PromoBanners = () => {
 
@@ -43,7 +43,7 @@ export const PromoBanners = () => {
                     </div>
                 </li>
             </ul>
-            <MedicineStores/>
+            <NearestMedicineStore/>
         </section>
     )
 }

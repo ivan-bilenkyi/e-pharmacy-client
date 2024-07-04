@@ -1,10 +1,7 @@
-import {Link} from "react-router-dom";
+import {MedicineStores} from "../components/MedicineStores/MedicineStores.jsx";
 
 export default function MedicineStore() {
     return (
-        <>
-            <p>MedicineStore</p>
-            <Link to='/medicine-store'>first</Link>
-        </>
+        <MedicineStores/>
     )
 }
