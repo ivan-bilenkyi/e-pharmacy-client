@@ -15,7 +15,7 @@ export const MedicineStores = () => {
     }, []);
 
     return (
-        <section className='pb-[80px] pt-[31px] px-[32px]'>
+        <section className='pb-[80px] pt-[31px] px-[20px] md:px-[32px]'>
             <h2 className='mb-[40px] text-28 leading-114 font-bold text-heading'>Medicine store</h2>
 
             <ul className='flex flex-col gap-[20px] md:flex-row md:flex-wrap items-center md:gap-x-[16px] md:gap-y-[32px] lg:gap-x-[36px] lg:gap-y-[38px]'>
