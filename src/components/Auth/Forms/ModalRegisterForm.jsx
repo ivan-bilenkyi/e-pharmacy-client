@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { register } from '../../../redux/auth/operations.js';
 import MaskedInput from 'react-text-mask';
 
-export const ModalRegisterForm = ({ openLoginForm }) => {
+export const ModalRegisterForm = ({ openLoginForm, onClose }) => {
     const dispatch = useDispatch();
     const validationSchema = Yup.object({
         name: Yup.string().required('Required'),
@@ -22,6 +22,7 @@ export const ModalRegisterForm = ({ openLoginForm }) => {
 
     const onSubmit = (values) => {
         dispatch(register(values));
+        onClose()
     };
 
     return (

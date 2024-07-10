@@ -10,8 +10,8 @@ export default function Header () {
     const isAuthPage = pathname === "/register" || pathname === "/login";
 
     return (
-        <header className={isHomePage ? "bg-green" : "bg-background"}>
-            <div className='w-1240px flex items-center justify-between py-7 px-5'>
+        <header className={isHomePage ? "bg-green  py-7 px-5" : "bg-background  py-7 px-5"}>
+            <div className='lg:w-[1248px] md:w-[704px] m-auto flex items-center justify-between'>
                 <Logo/>
                 {!isAuthPage && (
                     <>

@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useDispatch } from "react-redux";
 import { logIn } from "../../../redux/auth/operations.js";
 
-export const ModalLoginForm = ({ openLoginForm }) => {
+export const ModalLoginForm = ({ openLoginForm, onClose }) => {
     const dispatch = useDispatch();
     const validationSchema = Yup.object({
         email: Yup.string()
@@ -21,6 +21,7 @@ export const ModalLoginForm = ({ openLoginForm }) => {
 
     const onSubmit = (values) => {
         dispatch(logIn(values));
+        onClose()
     };
 
     return (

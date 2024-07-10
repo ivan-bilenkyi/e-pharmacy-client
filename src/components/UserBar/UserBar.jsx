@@ -3,11 +3,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectIsLoggedIn, selectUser} from "../../redux/auth/selectors.js";
 import sprite from '../../assets/sprite.svg'
 import {logOut} from "../../redux/auth/operations.js";
+import {selectorCarts} from "../../redux/cart/selectors.js";
 
 export const UserBar = () => {
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const dispatch = useDispatch();
     const { name } = useSelector(selectUser);
+    const carts = useSelector(selectorCarts)
     const firstLetterName = name?.charAt(0);
     const { pathname} = useLocation();
 
@@ -18,17 +20,22 @@ export const UserBar = () => {
     return (
         !isLoggedIn ? (
             <div className='items-center gap-14 hidden lg:flex'>
-                <Link to='/register' className='py-4 px-9 rounded-60 border border-grayAlpha text-subText'>Register</Link>
-                <Link to='/login' className='underline text-subText'>Login</Link>
+                <Link to='/register'
+                      className={`py-4 px-9 rounded-60 border border-text ${pathname === '/' ? 'text-subText' : 'text-text'}`}>
+                    Register
+                </Link>
+                <Link to='/login' className={`underline ${pathname === '/' ? 'text-subText' : 'text-text'}`}>
+                    Login
+                </Link>
             </div>
         ) : (
             <div className=' gap-[10px] items-center hidden lg:flex'>
-                <div className='w-[44px] h-[44px] p-14 rounded-50 bg-white relative'>
+                <div className='w-[44px] h-[44px] p-14 rounded-50 bg-white relative cursor-pointer'>
                     <svg width="16px" height="16px">
                         <use href={`${sprite}#shopping-cart`}></use>
                     </svg>
                     <div className='bg-lightGreen rounded-50 absolute top-[-2px] right-[-1px] h-[16px] w-[16px] flex items-center justify-center'>
-                        <span className='text-12 font-bold text-green'>0</span>
+                        <span className='text-12 font-bold text-green'>{carts}</span>
                     </div>
                 </div>
                 <div className='flex gap-[12px] items-center'>

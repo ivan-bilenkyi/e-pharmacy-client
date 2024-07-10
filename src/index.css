@@ -7,3 +7,7 @@ body{
     font-family: Inter, sans-serif;
     background-color: #F7F8FA;
 }
+
+*{
+    box-sizing: border-box;
+}

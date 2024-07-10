@@ -4,7 +4,7 @@ import { updateCart } from "./operations.js";
 const cartSlice = createSlice({
     name: 'carts',
     initialState: {
-        items: [],
+        carts: 0,
         isLoading: false,
         error: null,
     },
@@ -16,7 +16,7 @@ const cartSlice = createSlice({
             .addCase(updateCart.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                state.cart = action.payload.length;
+                state.carts = action.payload.length;
             })
             .addCase(updateCart.rejected, (state, action) => {
                 state.isLoading = false;
