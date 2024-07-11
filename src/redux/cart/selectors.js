@@ -1,1 +1,0 @@
-export const selectorCarts = state => state.carts.carts;

@@ -3,13 +3,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectIsLoggedIn, selectUser} from "../../redux/auth/selectors.js";
 import sprite from '../../assets/sprite.svg'
 import {logOut} from "../../redux/auth/operations.js";
-import {selectorCarts} from "../../redux/cart/selectors.js";
 
 export const UserBar = () => {
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const dispatch = useDispatch();
     const { name } = useSelector(selectUser);
-    const carts = useSelector(selectorCarts)
     const firstLetterName = name?.charAt(0);
     const { pathname} = useLocation();
 
@@ -35,7 +33,7 @@ export const UserBar = () => {
                         <use href={`${sprite}#shopping-cart`}></use>
                     </svg>
                     <div className='bg-lightGreen rounded-50 absolute top-[-2px] right-[-1px] h-[16px] w-[16px] flex items-center justify-center'>
-                        <span className='text-12 font-bold text-green'>{carts}</span>
+                        <span className='text-12 font-bold text-green'>0</span>
                     </div>
                 </div>
                 <div className='flex gap-[12px] items-center'>
