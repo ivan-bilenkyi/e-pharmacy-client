@@ -64,3 +64,16 @@ export const refreshUser = createAsyncThunk(
         },
     }
 );
+
+export const updateCart = createAsyncThunk(
+    'updateCart',
+    async (data, thunkAPI) => {
+        try {
+            const res = await axios.put(`/cart/update`, data);
+
+            return res.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    }
+);

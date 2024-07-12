@@ -23,7 +23,6 @@ export const RegisterForm = () => {
     };
 
     const onSubmit = (values) => {
-        console.log(values);
         dispatch(register(values));
     };
 

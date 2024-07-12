@@ -1,4 +1,4 @@
-import {  useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { useEffect, useState } from "react";
 import { selectIsLoggedIn } from "../redux/auth/selectors.js";
 import { Modal } from "../components/Modal/Modal.jsx";
@@ -9,6 +9,7 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import sprite from '../assets/sprite.svg';
 import axios from "axios";
+import {updateCart} from "../redux/auth/operations.js";
 
 const validationSchema = Yup.object({
     keyword: Yup.string(),
@@ -16,6 +17,7 @@ const validationSchema = Yup.object({
 });
 
 export default function Medicine() {
+    const dispatch = useDispatch()
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoginForm, setIsLoginForm] = useState(true);
@@ -65,7 +67,7 @@ export default function Medicine() {
 
     const toAddToBasket = async (id) => {
         if (isLoggedIn) {
-            // await dispatch(updateCart({ quantity: 1, productId: id }));
+            await dispatch(updateCart({ quantity: 1, productId: id }));
         } else {
             setIsModalOpen(true);
         }

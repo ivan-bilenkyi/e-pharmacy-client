@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { logIn, logOut, refreshUser, register } from "./operations";
+import {logIn, logOut, refreshUser, register, updateCart} from "./operations";
 
 const authSlice = createSlice({
     name: "auth",
@@ -8,7 +8,9 @@ const authSlice = createSlice({
             name: null,
             email: null,
         },
+        carts: null,
         token: null,
+        error: null,
         isLoggedIn: false,
         isLoading: false,
         isRefreshing: false,
@@ -42,17 +44,24 @@ const authSlice = createSlice({
             })
             .addCase(refreshUser.fulfilled, (state, action) => {
                 state.user = action.payload;
+                state.carts = action.payload.cart.length
                 state.isLoggedIn = true;
                 state.isRefreshing = false;
             })
-            .addCase(refreshUser.rejected, (state, action) => {
+            .addCase(refreshUser.rejected, (state) => {
                 state.user = {
                     name: null,
                     email: null,
                 };
                 state.token = null;
                 state.isLoggedIn = false;
-            }),
+            })
+            .addCase(updateCart.fulfilled, (state, action) => {
+                state.carts = action.payload.length
+            })
+            .addCase(updateCart.rejected, (state, action) => {
+                state.error = action.payload
+            })
 });
 
 export default authSlice.reducer;
