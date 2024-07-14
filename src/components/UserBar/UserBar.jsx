@@ -28,7 +28,7 @@ export const UserBar = () => {
                 </Link>
             </div>
         ) : (
-            <div className=' gap-[10px] items-center hidden lg:flex'>
+            <div className=' gap-[10px] items-center flex ml-auto lg:ml-0'>
                 <Link to={'/cart'}
                     className='w-[44px] h-[44px] p-14 rounded-50 bg-white relative'>
                     <svg width="16px" height="16px">
@@ -45,7 +45,7 @@ export const UserBar = () => {
                     <button
                         className={`${
                             pathname === '/' ? 'text-subText' : 'text-green'
-                        } rounded-60 border border-grayAlpha50 px-[32px] py-[16px]`}
+                        } rounded-60 border border-grayAlpha50 px-[32px] py-[16px] hidden lg:block`}
                         onClick={handleLogOut}
                     >
                         Log out

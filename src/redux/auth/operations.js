@@ -77,3 +77,16 @@ export const updateCart = createAsyncThunk(
         }
     }
 );
+
+export const placeOrder = createAsyncThunk(
+    'placeOrder',
+    async (data, thunkAPI) => {
+        try {
+            const res = await axios.put(`/cart/update`, data);
+
+            return res.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    }
+);

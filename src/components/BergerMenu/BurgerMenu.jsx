@@ -29,7 +29,7 @@ export const BurgerMenu = () => {
 
     return (
         <>
-            <div onClick={openModal} className="block lg:hidden cursor-pointer">
+            <div onClick={openModal} className="block lg:hidden ml-[16px] cursor-pointer">
                 <svg width="32" height="26">
                     <use href={`${isHomePage ? `${sprite}#burger-white` : `${sprite}#burger-green`}`}></use>
                 </svg>

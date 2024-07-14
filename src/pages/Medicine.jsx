@@ -1,15 +1,15 @@
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { selectIsLoggedIn } from "../redux/auth/selectors.js";
 import { Modal } from "../components/Modal/Modal.jsx";
 import { ModalRegisterForm } from "../components/Auth/Forms/ModalRegisterForm.jsx";
 import { ModalLoginForm } from "../components/Auth/Forms/ModalLoginForm.jsx";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import sprite from '../assets/sprite.svg';
 import axios from "axios";
-import {updateCart} from "../redux/auth/operations.js";
+import { updateCart } from "../redux/auth/operations.js";
 
 const validationSchema = Yup.object({
     keyword: Yup.string(),
@@ -17,13 +17,13 @@ const validationSchema = Yup.object({
 });
 
 export default function Medicine() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoginForm, setIsLoginForm] = useState(true);
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const history = useNavigate();
+    const navigate = useNavigate();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const initialCategory = searchParams.get('category') || '';
@@ -43,22 +43,20 @@ export default function Medicine() {
         };
 
         fetchProducts();
-    }, []);
-
-    const handleChange = (e, setFieldValue) => {
-        const { name, value } = e.target;
-        const params = new URLSearchParams(location.search);
-        params.set(name, value);
-        history({
-            pathname: location.pathname,
-            search: `?${params.toString()}`,
-        });
-        setFieldValue(name, value);
-    };
+    }, [initialCategory, initialKeyword]);
 
     const getFilteredProducts = async (values) => {
         try {
-            const { data } = await axios.get(`/products?category=${values.category}&keyword=${values.keyword}`);
+            const params = new URLSearchParams();
+            if (values.category) params.set('category', values.category);
+            if (values.keyword) params.set('keyword', values.keyword);
+
+            navigate({
+                pathname: location.pathname,
+                search: `?${params.toString()}`,
+            });
+
+            const { data } = await axios.get(`/products?${params.toString()}`);
             setProducts(data.products);
         } catch (e) {
             console.log(e);
@@ -81,6 +79,12 @@ export default function Medicine() {
         setIsLoginForm(value);
     };
 
+    const navigateToProduct = (item) => {
+        navigate('/product', {
+            state: { item },
+        });
+    };
+
     return (
         <section className='pb-[80px] pt-[31px] px-[20px] md:px-[32px]'>
             <div className='lg:w-[1248px] md:w-[704px] m-auto'>
@@ -100,11 +104,10 @@ export default function Medicine() {
                                 <Field
                                     as="select"
                                     name="category"
-                                    className='rounded-[60px] w-[100%] md:w-[214px] h-[44px] bg-white border-[1px] border-darkAlpha10 mr-[6px] py-[13px] px-[18px] font-normal font-12 leading-150 text-darkAlpha'
-                                    onChange={(e) => handleChange(e, setFieldValue)}
+                                    className='rounded-[60px] w-[100%] md:w-[214px] h-[44px] bg-white border-[1px] border-darkAlpha10 mr-[6px] px-[18px] font-normal font-12 leading-150 text-darkAlpha'
                                 >
                                     <option value="">Product category</option>
-                                    {categories.length > 0 && categories.map((category, index) => (
+                                    {categories?.length > 0 && categories.map((category, index) => (
                                         <option key={index} value={category}>
                                             {category}
                                         </option>
@@ -117,7 +120,6 @@ export default function Medicine() {
                                     type="text"
                                     name="keyword"
                                     className='rounded-[60px] w-[100%] md:w-[214px] h-[44px] bg-white border-[1px] border-darkAlpha10 mr-[6px] py-[13px] px-[18px] font-normal font-12 leading-150 text-darkAlpha'
-                                    onChange={(e) => handleChange(e, setFieldValue)}
                                 />
                                 <svg width="16" height="16" className='absolute top-[15px] right-[20px]'>
                                     <use href={`${sprite}#search`}></use>
@@ -158,10 +160,9 @@ export default function Medicine() {
                                         className='bg-green text-white text-14 leading-100 font-medium px-[16px] py-[10px] rounded-[24px]'>
                                         Add to cart
                                     </button>
-                                    <Link to={{ pathname: '/product', state: { item } }}
-                                          className='text-heading underline leading-150 text-12 font-normal'>
+                                    <button onClick={() => navigateToProduct(item)} className='text-heading underline leading-150 text-12 font-normal'>
                                         Details
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </li>
