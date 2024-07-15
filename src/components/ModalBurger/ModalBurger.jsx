@@ -38,7 +38,7 @@ export const ModalBurger = ({ isOpen, onClose, children }) => {
                     onClick={handleClickOutside}
                 >
                     <div
-                        className={`relative w-[210px] h-full bg-green transform transition-transform duration-300 ${
+                        className={`relative w-[210px] md:w-[324px] h-full bg-green transform transition-transform duration-300 ${
                             isVisible ? 'translate-x-0' : 'translate-x-full'
                         }`}
                     >

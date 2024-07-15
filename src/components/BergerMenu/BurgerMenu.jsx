@@ -39,24 +39,28 @@ export const BurgerMenu = () => {
                 <div className='flex flex-col justify-between items-center h-full'>
                     <ul className='flex flex-col items-center gap-1'>
                         <li className='bg-white rounded-[60px] border border-borderNavLink p-2 text-text text-14 leading-100 font-normal'>
-                            <NavLink to='/' onClick={closeModal} className={({ isActive }) =>
+                            <NavLink to='/' onClick={closeModal} className={({isActive}) =>
                                 isActive ? 'bg-green rounded-[60px] text-white py-2 px-5 block' : 'block py-2 px-5'
                             }>
                                 Home
                             </NavLink>
                         </li>
-                        <li className='bg-white rounded-[60px] border border-borderNavLink p-2 text-text text-14 leading-100 font-normal'>
+                        <li className='bg-white rounded-[60px] border border-borderNavLink p-2 text-text text-14 leading-100 font-normal relative'>
+                            <div
+                                className='absolute top-[-6px] left-[71px] w-[15px] h-[6px] bg-white border-t-[1px] border-b-[1px] border-l-[1px] border-r-[1px] border-l-borderNavLink border-r-borderNavLink border-t-white border-b-white z-[1]'></div>
                             <NavLink
                                 to='/medicine-store' onClick={closeModal}
-                                className={({ isActive }) =>
+                                className={({isActive}) =>
                                     isActive ? 'bg-green rounded-[60px] text-white py-2 px-5 block' : 'block py-2 px-5'
                                 }
                             >
                                 Medicine Store
                             </NavLink>
+                            <div
+                                className='absolute bottom-[-6px] left-[71px] w-[15px] h-[6px] bg-white border-t-[1px] border-b-[1px] border-l-[1px] border-r-[1px] border-l-borderNavLink border-r-borderNavLink border-t-white border-b-white z-[1]'></div>
                         </li>
                         <li className='bg-white rounded-[60px] border border-borderNavLink p-2 text-text text-14 leading-100 font-normal'>
-                            <NavLink to='/medicine' onClick={closeModal} className={({ isActive }) =>
+                            <NavLink to='/medicine' onClick={closeModal} className={({isActive}) =>
                                 isActive ? 'bg-green rounded-[60px] text-white py-2 px-5 block' : 'block py-2 px-5'
                             }>
                                 Medicine
