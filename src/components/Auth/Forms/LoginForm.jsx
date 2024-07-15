@@ -30,9 +30,9 @@ export const LoginForm= () => {
                 validationSchema={validationSchema}
                 onSubmit={onSubmit}
             >
-                <Form className="flex flex-col mx-auto mt-[78px]">
+                <Form className="flex flex-col mx-auto md:m-0 mt-[78px]">
 
-                    <div className='flex flex-col gap-[10px] lg:mb-[62px] mb-[132px] text-12 leading-150'>
+                    <div className='flex flex-col gap-[10px] md:mb-[62px] mb-[132px] text-12 leading-150'>
                         <div className='relative'>
                             <Field
                                 type="email"
@@ -56,7 +56,7 @@ export const LoginForm= () => {
                         </div>
                     </div>
 
-                    <div className='inline-flex flex-col items-center gap-14 m-auto'>
+                    <div className='inline-flex flex-col items-center gap-14 m-auto md:m-0 md:mr-auto'>
                         <button type="submit"
                                 className="w-[335px] py-13 px-4 text-white bg-green rounded-60 hover:bg-hoverButton">Login
                         </button>

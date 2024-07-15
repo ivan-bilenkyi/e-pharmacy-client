@@ -28,8 +28,8 @@ export const Hero = () => {
                         className="w-[331px] h-[312px] sm:w-[704px] sm:h-[508px] md:w-[704px] md:h-[508px]"
                     />
                 </picture>
-                <div className='absolute top-0 left-0 text-white py-36 px-14 flex flex-col sm:w-[331px]'>
-                    <h1 className='font-bold text-50 lg:text-74 leading-100 mb-24'>Your medication delivered</h1>
+                <div className='absolute top-0 left-0 text-white py-36 px-14 flex flex-col sm:w-[331px] md:w-[610px] md:left-[31px]'>
+                    <h1 className='font-bold text-50 md:text-74 leading-100 mb-24'>Your medication delivered</h1>
                     <p className='inline-block mr-[19px] ml-auto text-12 leading-133 md:text-16 md:leading-125'>Say goodbye to all your <br/> healthcare worries with us</p>
                 </div>
             </div>

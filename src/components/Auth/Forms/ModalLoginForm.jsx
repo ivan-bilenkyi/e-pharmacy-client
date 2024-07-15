@@ -27,7 +27,7 @@ export const ModalLoginForm = ({ openLoginForm, onClose }) => {
     return (
         <div>
             <h2 className='text-heading text-28 leading-114 font-bold mb-[14px] text-center'>Log in to your account</h2>
-            <p className='text-topText text-14 leading-128 font-normal mb-[25px] text-center'>Please login to your account before continuing.</p>
+            <p className='text-topText text-14 leading-128 font-normal mb-[25px] text-center md:px-[20px]'>Please login to your account before continuing.</p>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}

@@ -28,12 +28,12 @@ export const ModalRegisterForm = ({ openLoginForm, onClose }) => {
     return (
         <div>
             <h2 className='text-heading text-28 leading-114 font-bold mb-[14px] text-center'>Sign Up</h2>
-            <p className='text-topText text-14 leading-128 font-normal mb-[25px] text-center'>Before proceeding, please register on our
+            <p className='text-topText text-14 leading-128 font-normal mb-[25px] md:px-[38px] text-center'>Before proceeding, please register on our
                 site.</p>
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                 <Form className='mb-[14px]'>
                     <div
-                        className='flex flex-col lg:flex-row flex-wrap gap-[10px] lg:mb-[62px] mb-[20px] text-12 leading-150'>
+                        className='flex flex-col lg:flex-row flex-wrap gap-[10px] lg:mb-[62px] mb-[20px] md:mb-[25px] text-12 leading-150'>
                         <div className='relative'>
                             <Field
                                 type="text"

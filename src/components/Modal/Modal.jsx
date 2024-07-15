@@ -38,7 +38,7 @@ export const Modal = ({ isOpen, onClose, children }) => {
                     onClick={handleClickOutside}
                 >
                     <div
-                        className={`relative bg-white transform transition-transform duration-300 w-[343px] h-fit rounded-[20px] py-[40px] px-[32px] ${
+                        className={`relative bg-white transform transition-transform duration-300 w-[343px] md:w-[463px] h-fit rounded-[20px] py-[40px] px-[32px] md:px-[70px] md:py-[50px] ${
                             isVisible ? 'scale-100' : 'scale-95'
                         }`}
                     >
