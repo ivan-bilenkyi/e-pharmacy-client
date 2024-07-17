@@ -3,7 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { updateCart } from "../redux/auth/operations.js";
+import {placeOrder, updateCart} from "../redux/auth/operations.js";
 import sprite from "../assets/sprite.svg";
 
 const initialValues = {
@@ -67,6 +67,9 @@ export default function Cart() {
     };
 
     const onSubmit = async (values, { resetForm }) => {
+        if (!products.length) {
+            return
+        }
         const order = {
             ...values,
             products: products.map(product => ({
@@ -74,7 +77,8 @@ export default function Cart() {
                 quantity: product.quantity
             }))
         };
-        await axios.post('/cart/checkout', order)
+        await dispatch(placeOrder(order))
+        // await axios.post('/cart/checkout', order)
         setProducts([]);
         setTotalPrice(null);
         resetForm();
@@ -124,8 +128,8 @@ export default function Cart() {
                                                 placeholder={`Enter ${field}`}
                                                 className="rounded-60 border border-darkAlpha focus:border-blue-500 px-18 py-[12px] w-full"
                                             />
-                                            <ErrorMessage name={field} component="span"
-                                                          className="text-red-500 text-xs absolute"/>
+                                            <ErrorMessage name="paymentMethod" component="div"
+                                                          style={{ color: 'red', fontSize: '12px', position: 'absolute' }}/>
                                         </div>
                                     ))}
                                 </div>
@@ -136,13 +140,15 @@ export default function Cart() {
                                     You can pay us in multiple ways in our payment gateway system.
                                 </p>
                                 <div role="group" aria-labelledby="paymentMethod"
-                                     className='flex flex-col gap-[8px] mb-[40px]'>
+                                     className='flex flex-col gap-[8px] mb-[40px] relative'>
                                     {['Cash On Delivery', 'Bank'].map((method) => (
                                         <label key={method} className='flex items-center gap-[8px]'>
                                             <Field type="radio" name="paymentMethod" value={method}/>
                                             <span>{method}</span>
                                         </label>
                                     ))}
+                                    <ErrorMessage name="paymentMethod" component="div"
+                                                  style={{ color: 'red', fontSize: '12px', position: 'absolute', top: '-12px' }}/>
                                 </div>
                                 <hr className='bg-darkAlpha10 mb-[40px]'/>
                                 <h3 className='text-heading text-16 md:text-20 font-bold leading-140 mb-[12px]'>Order

@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {lazy, useEffect} from "react";
 import {AppLayout} from "./components/AppLayout.jsx";
 import RestrictedRoute from "./components/RestrictedRoute.jsx";
@@ -38,6 +38,7 @@ export default function App() {
                 <Route path='/medicine-store' element={<MedicineStore />} />
                 <Route path='/medicine' element={<Medicine />} />
                 <Route path='/product' element={<Product />} />
+                <Route path="*" element={<Navigate to="/" />} />
             </Route>
         </Routes>
     )

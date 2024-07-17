@@ -5,7 +5,7 @@ import pillMobile2x from "../../assets/auth/pill-mobile_2x.png"
 
 export const AuthTitle = () => {
     return (
-        <div className='relative pt-78 md:pt-[144px] sm:w-[332px] md:w-[614px] shrink-0'>
+        <div className='relative pt-78 md:pt-[144px] lg:pt-0 sm:w-[332px] md:w-[614px] shrink-0 lg:ml-[65px]'>
             <picture>
                 <source
                     media="(min-width: 768px)"
@@ -18,10 +18,10 @@ export const AuthTitle = () => {
                 <img
                     src={pillMobile}
                     alt="pill"
-                    className="absolute right-[20px] top-[5px] lg:top-[-55px]"
+                    className="absolute right-[20px] top-[5px] lg:top-[-107px]"
                 />
             </picture>
-            <h1 className='font-bold text-28 leading-82 md:text-54 md:leading-111 md:mb-[54px]'>Your medication,<br/> delivered Say goodbye to all <span className='text-green'>your healthcare</span> worries with us</h1>
+            <h1 className='font-bold text-28 leading-82 md:text-54 md:leading-111 md:mb-[54px] lg:mb-0'>Your medication,<br/> delivered Say goodbye to all <span className='text-green'>your healthcare</span> worries with us</h1>
         </div>
     )
 }

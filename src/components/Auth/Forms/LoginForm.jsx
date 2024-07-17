@@ -58,7 +58,7 @@ export const LoginForm= () => {
 
                     <div className='inline-flex flex-col items-center gap-14 m-auto md:m-0 md:mr-auto'>
                         <button type="submit"
-                                className="w-[335px] py-13 px-4 text-white bg-green rounded-60 hover:bg-hoverButton">Login
+                                className="w-[335px] py-13 px-4 text-white bg-green rounded-60 hover:bg-hoverButton">Log In
                         </button>
                         <Link to='/register' className='text-12 leading-150 text-darkAlpha items-center'>Don't have an account?</Link>
                     </div>

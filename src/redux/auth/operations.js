@@ -81,8 +81,9 @@ export const updateCart = createAsyncThunk(
 export const placeOrder = createAsyncThunk(
     'placeOrder',
     async (data, thunkAPI) => {
+        console.log(data)
         try {
-            const res = await axios.put(`/cart/update`, data);
+            const res = await axios.post(`/cart/checkout`, data);
 
             return res.data;
         } catch (error) {
