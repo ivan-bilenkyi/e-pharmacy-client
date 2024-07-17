@@ -78,7 +78,6 @@ export default function Cart() {
             }))
         };
         await dispatch(placeOrder(order))
-        // await axios.post('/cart/checkout', order)
         setProducts([]);
         setTotalPrice(null);
         resetForm();
