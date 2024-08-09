@@ -212,7 +212,7 @@ export default function Cart() {
                                                 </div>
                                                 <button
                                                     onClick={() => deleteCart(product.id)}
-                                                    className='px-[12px] py-[8px] md:mt-auto text-14 font-medium leading-114 rounded-[40px] text-red bg-redAlpha'
+                                                    className='px-[12px] py-[8px] md:mt-auto text-14 font-medium leading-114 rounded-[40px] text-red bg-redAlpha hover:bg-red hover:text-white'
                                                 >
                                                     Remove
                                                 </button>

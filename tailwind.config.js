@@ -34,7 +34,8 @@ module.exports = {
         borderNavLink: '#D9D9D9',
         hoverButton: '#3F945F',
         lightGray: '#FDFDFD',
-        lightGreen: '#E7F1ED'
+        lightGreen: '#E7F1ED',
+        red: '#E85050',
       },
       textColor: {
         'heading': '#1D1E21',
